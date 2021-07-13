@@ -1,0 +1,31 @@
+package abstractex;
+
+public class GoodCal extends Calculator {
+
+	@Override
+	public int add(int a, int b) {
+		return a + b;
+	}
+
+	@Override
+	public int subtract(int a, int b) {
+		return a - b;
+	}
+
+	@Override
+	public double average(int[] a) {
+		double sum = 0;
+		for (int i = 0; i < a.length; i++) {
+			sum +=a[i];			//sum = sum+a[i] >> i = ÀÎµ¦½º 0ºÎÅÍ
+		}
+		return sum/a.length;	//a.length ¹è¿­¿¡ µé¾î°¡´Â °¹¼ö 2,3,4·Î ÃÑ 3ÀÌ µÊ
+	}
+
+	public static void main(String[] args) {
+		GoodCal c =new GoodCal();
+				System.out.println(c.add(2,3));
+				System.out.println(c.subtract (2,3));
+				System.out.println(c.average(new int [] {2, 3, 4}));
+	}
+
+}
